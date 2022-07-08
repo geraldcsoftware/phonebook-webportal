@@ -1,10 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomePage } from "./pages";
 
-const routes: Routes = [];
+const routes: Routes = [
+    {
+        path: '',
+        component: HomePage
+    }
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes, {
+        onSameUrlNavigation: "reload",
+        paramsInheritanceStrategy: 'always',
+        initialNavigation: 'enabled',
+        urlUpdateStrategy: 'deferred'
+    })],
+    exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
