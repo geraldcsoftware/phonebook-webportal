@@ -1,23 +1,28 @@
 <div class="h-full w-full flex flex-col items-stretch relative"
-     *ngrxLet="phoneBookId; let selectedPhoneBookId">
-    <div class="absolute inset-0 z-0  bg-phone-stool bg-cover bg-center filter opacity-20 hue-rotate-180">
+     *ngrxLet="phoneBookId$; let selectedPhoneBookId">
+    <div class="absolute inset-0 z-0 bg-phone-stool bg-cover bg-center filter opacity-20 hue-rotate-180">
     </div>
 
-    <div class="h-full w-full flex flex-col items-stretch">
+    <div class="h-full w-full flex flex-col items-stretch relative z-[5]">
         <div class="px-4 py-2 mb-4 relative z-10">
             <h5 class="text-3xl text-gray-600 font-sans">
                 My Phone Books
             </h5>
         </div>
 
-        <div class="hover:bg-green-50 transition-colors duration-75 cursor-pointer text-gray-800 px-4 py-2 flex items-center"
-             [class.bg-green-600]="selectedPhoneBookId === 'test123'"
-             [class.hover:bg-green-700]="selectedPhoneBookId === 'test123'"
-             (click)="selectPhoneBook('test123')">
-            <h6 class="text-xl"
-                [class.text-white]="selectedPhoneBookId === 'test123'">
-                My Contacts
+        <div *ngFor="let phoneBook of phoneBooks$ | async"
+             class="hover:bg-green-50 transition-colors duration-75 cursor-pointer text-gray-800 px-4 py-2 flex items-center"
+             [class.bg-green-600]="selectedPhoneBookId === phoneBook.id"
+             [class.hover:bg-green-700]="selectedPhoneBookId === phoneBook.id"
+             (click)="selectPhoneBook(phoneBook.id)">
+            <h6 class="text-xl flex-grow"
+                [class.text-white]="selectedPhoneBookId === phoneBook.id">
+                {{ phoneBook.name }}
             </h6>
+            <span class="text-white px-3 py-1 rounded-full bg-green-800 text-sm font-mono min-w-[2ch]"
+                  [class.hidden]="phoneBook.numberOfEntries == 0">
+                {{ phoneBook.numberOfEntries }}
+            </span>
         </div>
     </div>
 </div>

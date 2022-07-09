@@ -2,17 +2,23 @@
     <div class="absolute inset-0 z-0  bg-phone-1 bg-cover bg-bottom filter opacity-10 hue-rotate-[-45deg]">
     </div>
     <div class="w-full h-full z-[5] relative flex flex-col px-8 py-4">
-        <div class="mb-8">
+        <div class="mb-8" *ngrxLet=" phoneBook$; let phoneBook">
             <h5 class="font-bold font-sans text-gray-600 text-2xl">
-                My Contacts
+                {{ phoneBook?.name }}
             </h5>
         </div>
 
 
         <div class="divide-y divide-gray-100 grid grid-cols-1">
-            <div class="rounded py-2 flex items-center justify-between">
-                <span class="text-xl text-gray-500 font-sans">Gerald 1</span>
-                <span class="text-xl text-gray-800 font-mono">0773093289</span>
+            <div *ngFor="let entry of entries$ | async"
+                 class="rounded py-2 flex items-center justify-between">
+                <span class="text-xl text-gray-500 font-sans">{{ entry.name }}</span>
+                <span class="text-xl text-gray-800 font-mono">
+                    <ng-container *ngFor="let num of entry.phoneNumbers; last as last">
+                        <ng-container>{{ num }}</ng-container>
+                        <ng-container *ngIf="!last">,&nbsp;</ng-container>
+                    </ng-container>
+                </span>
             </div>
         </div>
     </div>
