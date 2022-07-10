@@ -1,27 +1,16 @@
 # PhoneBookWebPortal
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
+Angular web app to demonstrate a simple phone book application. The backend for this can be found on [this link](https://github.com/geraldcsoftware/phonebook-api).
 
-## Development server
+## Displaying Phonebooks and Phonebook Entries
+![image](https://user-images.githubusercontent.com/16701085/178146313-43b72962-71ce-4a98-8b3f-db6d42e56ff3.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Adding a phone book
+![image](https://user-images.githubusercontent.com/16701085/178146342-2807c4dd-10fc-422f-9ab7-0ccdac44129f.png)
 
-## Code scaffolding
+## Adding a phone book entry
+![image](https://user-images.githubusercontent.com/16701085/178146509-8ba3408e-4e8f-4836-b987-1ced138c49a9.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Type in search box to filter
+![image](https://user-images.githubusercontent.com/16701085/178146570-47de6364-0e8d-45a3-ae08-06d84237d4ab.png)
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
