@@ -2,10 +2,11 @@
     <div class="absolute inset-0 z-0 bg-phone-1 bg-cover bg-bottom filter opacity-10 hue-rotate-[-45deg]">
     </div>
     <div class="w-full h-full z-[5] relative flex flex-col px-8 py-4">
-        <div class="mb-2" *ngrxLet=" phoneBook$; let phoneBook">
-            <h5 class="font-sans text-2xl font-bold text-gray-600">
+        <div class="flex items-center mb-2 gap-x-2" *ngrxLet="phoneBook$; let phoneBook">
+            <h5 class="flex-grow font-sans text-2xl font-bold text-gray-600">
                 {{ phoneBook?.name }}
             </h5>
+            <app-search-phone-book-entry></app-search-phone-book-entry>
         </div>
 
         <div class="mb-8">

@@ -1,0 +1,12 @@
+<div class="inline-flex items-stretch gap-x-2">
+    <input placeholder="Type to search contacts"
+           [formControl]="searchControl"
+           class="px-4 py-2 placeholder-teal-600 border-2 border-gray-200 rounded bg-white/59 hover:border-teal-500 outline-0 focus:border-teal-600 focus:outline-none">
+
+    <button type="button"
+            [disabled]="!searchControl.value"
+            (click)="clear(true)"
+            class="px-8 py-2 disabled:bg-gray-400 flex items-center justify-center font-sans focus:outline-none rounded bg-teal-500 text-white [&:not(:disabled)]:hover:bg-teal-900">
+        <span>Clear</span>
+    </button>
+</div>

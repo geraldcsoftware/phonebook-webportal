@@ -41,6 +41,9 @@ export class PhonebookEntriesListComponent implements OnInit, OnDestroy {
     private onPhoneBookChanged(phoneBookId: string) {
         if (phoneBookId)
             this.phoneBookEntriesState.loadPhoneBookEntries({ phoneBookId, searchText: '' });
+        else {
+            console.log('Phone book id is undefined');
+        }
     }
 
 }

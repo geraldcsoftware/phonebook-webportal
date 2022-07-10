@@ -27,8 +27,7 @@ export class PhoneBookEntriesState extends ComponentStore<State> {
         (origin$: Observable<{ phoneBookId: string, searchText: string | undefined }>) => origin$.pipe(
             switchMap(request => this.phoneBookEntriesService.getPhoneBookEntries(request.phoneBookId, request.searchText)),
             tapResponse(entries => this.patchState(state => ({ ...state, entries })),
-                error => {
-                })));
+                error => console.error(error))));
 
     addPhoneBookEntry: (request: { name: string, phoneNumbers: string[], phoneBookId: string }) => void = this.effect(
         (origin$: Observable<{ name: string, phoneNumbers: string[], phoneBookId: string }>) => origin$.pipe(
@@ -51,6 +50,5 @@ export class PhoneBookEntriesState extends ComponentStore<State> {
                         } : p)
                     }));
                 },
-                error => {
-                })));
+                error => console.error(error))));
 }

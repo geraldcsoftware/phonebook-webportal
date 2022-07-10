@@ -6,6 +6,7 @@ import { PhonebookEntriesListComponent } from './phonebook-entries-list/phoneboo
 import { AddPhoneBookComponent } from './add-phone-book/add-phone-book.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { AddPhoneBookEntryComponent } from './add-phone-book-entry/add-phone-book-entry.component';
+import { SearchPhoneBookEntryComponent } from './search-phone-book-entry/search-phone-book-entry.component';
 
 
 
@@ -14,7 +15,8 @@ import { AddPhoneBookEntryComponent } from './add-phone-book-entry/add-phone-boo
     PhoneBooksListComponent,
     PhonebookEntriesListComponent,
     AddPhoneBookComponent,
-    AddPhoneBookEntryComponent
+    AddPhoneBookEntryComponent,
+    SearchPhoneBookEntryComponent
   ],
   imports: [
     CommonModule,
