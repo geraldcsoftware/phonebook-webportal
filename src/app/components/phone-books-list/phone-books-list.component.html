@@ -1,21 +1,24 @@
-<div class="h-full w-full flex flex-col items-stretch relative"
+<div class="relative flex flex-col items-stretch w-full h-full"
      *ngrxLet="phoneBookId$; let selectedPhoneBookId">
-    <div class="absolute inset-0 z-0 bg-phone-stool bg-cover bg-center filter opacity-20 hue-rotate-180">
+    <div class="absolute inset-0 z-0 bg-center bg-cover bg-phone-stool filter opacity-20 hue-rotate-180">
     </div>
 
     <div class="h-full w-full flex flex-col items-stretch relative z-[5]">
-        <div class="px-4 py-2 mb-4 relative z-10">
-            <h5 class="text-3xl text-gray-600 font-sans">
+        <div class="relative z-10 px-4 py-2">
+            <h5 class="font-sans text-3xl text-gray-600">
                 My Phone Books
             </h5>
         </div>
+        <div class="px-4 mb-4">
+            <app-add-phone-book></app-add-phone-book>
+        </div>
 
         <div *ngFor="let phoneBook of phoneBooks$ | async"
-             class="hover:bg-green-50 transition-colors duration-75 cursor-pointer text-gray-800 px-4 py-2 flex items-center"
+             class="flex items-center px-4 py-2 text-gray-800 transition-colors duration-75 cursor-pointer hover:bg-green-50"
              [class.bg-green-600]="selectedPhoneBookId === phoneBook.id"
              [class.hover:bg-green-700]="selectedPhoneBookId === phoneBook.id"
              (click)="selectPhoneBook(phoneBook.id)">
-            <h6 class="text-xl flex-grow"
+            <h6 class="flex-grow text-xl"
                 [class.text-white]="selectedPhoneBookId === phoneBook.id">
                 {{ phoneBook.name }}
             </h6>

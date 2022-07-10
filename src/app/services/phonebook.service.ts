@@ -17,4 +17,8 @@ export class PhonebookService {
         });
         return this.httpClient.get<PhoneBook[]>('/api/phonebooks', { params });
     }
+
+    public addPhoneBook(phoneBook: { name: string }): Observable<PhoneBook> {
+        return this.httpClient.post<PhoneBook>('/api/phonebooks', phoneBook);
+    }
 }

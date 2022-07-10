@@ -1,0 +1,36 @@
+<div class="w-full">
+    <button type="button"
+            [@editButton]="mode"
+            (click)="mode = 'edit'"
+            class="flex items-center w-full px-6 py-2 text-white bg-teal-800 rounded hover:bg-teal-900 focus:outline-none focus:shadow-outline">
+        <span>
+            Add phonebook
+        </span>
+    </button>
+
+    <form [formGroup]="form" [@editForm]="mode" (ngSubmit)="submit()"
+            class="flex items-center w-full gap-x-1">
+        <div class="flex-grow">
+            <input formControlName="name"
+                    placeholder="Phonebook name"
+                    class="px-4 py-2 placeholder-teal-600 border border-gray-200 rounded bg-white/59 hover:border-teal-500 outline-0 focus:border-teal-600"
+                    [class.border-red-600]="nameControl?.touched && nameControl?.invalid">
+        </div>
+
+        <div class="">
+            <button type="submit"
+                    [disabled]="form.invalid"
+                    class="rounded-full bg-teal-50 px-3 py-3 [not(disabled)]:hover:bg-teal-100 focus:outline-0 focus-visible:ring-2 focus-visible:ring-teal-200 text-teal-700 disabled:text-gray-400 [not(disabled)]:hover:text-teal-900 transition-colors duration-75">
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg"
+                        class="w-6 h-6" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+            </span>
+            </button>
+        </div>
+    </form>
+   
+
+</div>
