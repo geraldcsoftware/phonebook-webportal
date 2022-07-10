@@ -17,4 +17,13 @@ export class PhonebookEntriesService {
         });
         return this.httpClient.get<PhoneBookEntry[]>(`/api/phonebooks/${ phoneBookId }/entries`, { params });
     }
+
+    public addPhoneBookEntry(phoneBookId: string, name: string, phoneNumbers: string[]): Observable<PhoneBookEntry> {
+        return this.httpClient.post<PhoneBookEntry>(`/api/phonebooks/${ phoneBookId }/entries`,
+            {
+                name,
+                phoneBookId,
+                phoneNumbers
+            });
+    }
 }

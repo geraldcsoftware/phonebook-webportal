@@ -5,6 +5,7 @@ import { PhoneBooksListComponent } from './phone-books-list/phone-books-list.com
 import { PhonebookEntriesListComponent } from './phonebook-entries-list/phonebook-entries-list.component';
 import { AddPhoneBookComponent } from './add-phone-book/add-phone-book.component';
 import { ReactiveFormsModule } from "@angular/forms";
+import { AddPhoneBookEntryComponent } from './add-phone-book-entry/add-phone-book-entry.component';
 
 
 
@@ -12,7 +13,8 @@ import { ReactiveFormsModule } from "@angular/forms";
   declarations: [
     PhoneBooksListComponent,
     PhonebookEntriesListComponent,
-    AddPhoneBookComponent
+    AddPhoneBookComponent,
+    AddPhoneBookEntryComponent
   ],
   imports: [
     CommonModule,
